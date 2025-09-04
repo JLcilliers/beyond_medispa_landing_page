@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Medispa - Landing Page Options</title>
+    <meta name="description" content="Choose from three premium landing page designs for Beyond Medispa at Harvey Nichols">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #003C21;
+            --color-secondary: #DFD6CD;
+            --color-white: #FFFFFF;
+            --color-black: #000000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--color-primary) 0%, rgba(0, 60, 33, 0.8) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 250px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .option-card {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-primary);
+        }
+        
+        .option-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--color-secondary);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .option-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .option-description {
+            color: var(--color-black);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .option-features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-black);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+        
+        .option-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+        
+        .option-btn {
+            display: inline-block;
+            background: var(--color-primary);
+            color: var(--color-white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-primary);
+        }
+        
+        .option-btn:hover {
+            background: transparent;
+            color: var(--color-primary);
+        }
+        
+        .info-section {
+            background: rgba(223, 214, 205, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-section p {
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .client-name {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container > * {
+            animation: fadeIn 0.8s ease both;
+        }
+        
+        .container > *:nth-child(1) { animation-delay: 0.1s; }
+        .container > *:nth-child(2) { animation-delay: 0.2s; }
+        .container > *:nth-child(3) { animation-delay: 0.3s; }
+        .container > *:nth-child(4) { animation-delay: 0.4s; }
+        .container > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.beyondmedispa.com/wp-content/uploads/2025/07/logo_txt_w_1400x600_transparent.png" alt="Beyond Medispa" class="logo">
+        
+        <h1>Landing Page Design Options</h1>
+        <p class="subtitle">Choose from three premium designs for Beyond Medispa's grand reopening at Harvey Nichols</p>
+        
+        <div class="options-grid">
+            <!-- Option 1: Premium Aesthetic -->
+            <div class="option-card">
+                <div class="option-number">1</div>
+                <h2 class="option-title">Premium Aesthetic</h2>
+                <p class="option-description">Luxury-focused design emphasizing the exclusive Harvey Nichols experience and premium treatments.</p>
+                <ul class="option-features">
+                    <li>Elegant gold gradient hero</li>
+                    <li>Treatment showcase</li>
+                    <li>Medical expertise focus</li>
+                    <li>Testimonials section</li>
+                    <li>FAQ accordion</li>
+                </ul>
+                <a href="premium-aesthetic/index.html" class="option-btn">View Option 1</a>
+            </div>
+            
+            <!-- Option 2: Body Transformation -->
+            <div class="option-card">
+                <div class="option-number">2</div>
+                <h2 class="option-title">Body Transformation</h2>
+                <p class="option-description">Results-driven design highlighting body contouring and transformation journeys.</p>
+                <ul class="option-features">
+                    <li>Dynamic hero with stats</li>
+                    <li>Journey timeline</li>
+                    <li>Success stories</li>
+                    <li>Package comparisons</li>
+                    <li>Results gallery</li>
+                </ul>
+                <a href="body-transformation/index.html" class="option-btn">View Option 2</a>
+            </div>
+            
+            <!-- Option 3: Expert Medical -->
+            <div class="option-card">
+                <div class="option-number">3</div>
+                <h2 class="option-title">Expert Medical</h2>
+                <p class="option-description">Medical expertise-focused design emphasizing professional qualifications and evidence-based treatments.</p>
+                <ul class="option-features">
+                    <li>Professional hero design</li>
+                    <li>Signature treatments</li>
+                    <li>Medical excellence</li>
+                    <li>Patient stories</li>
+                    <li>Evidence-based results</li>
+                </ul>
+                <a href="technology-innovation/index.html" class="option-btn">View Option 3</a>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>About These Designs</h2>
+            <p>Each landing page option features the same premium content and treatments, presented with a different visual approach and emphasis. All designs are fully responsive, use your specified color palette (#003C21, #DFD6CD, #FFFFFF, #000000), and are optimized for conversion with clear calls-to-action for booking consultations.</p>
+        </div>
+        
+        <div class="client-name">
+            <p>Prepared for Beyond Medispa | Harvey Nichols Locations | 2025</p>
+        </div>
+    </div>
+</body>
+</html>

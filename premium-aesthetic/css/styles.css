@@ -196,7 +196,7 @@
     width: 80px;
     height: 80px;
     margin: 0 auto var(--space-4);
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-secondary));
+    background: var(--color-gold-primary);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;

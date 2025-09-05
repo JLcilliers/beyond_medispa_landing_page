@@ -97,9 +97,14 @@
 }
 
 .hero-cta .btn-primary {
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-light));
+    background: var(--color-gold-primary);
     border: none;
     box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+    transition: background var(--transition-base);
+}
+
+.hero-cta .btn-primary:hover {
+    background: var(--color-gold-secondary);
 }
 
 .hero-cta .btn-secondary {
@@ -221,7 +226,7 @@
 .treatment-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-secondary));
+    background: var(--color-gold-primary);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -378,7 +383,7 @@
     top: 0;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-secondary));
+    background: var(--color-gold-primary);
     color: var(--color-white);
     border-radius: var(--radius-full);
     display: flex;
@@ -496,7 +501,7 @@
 }
 
 .gallery-placeholder {
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-secondary));
+    background: var(--color-gold-primary);
     color: var(--color-white);
     padding: var(--space-8);
     border-radius: var(--radius-lg);
@@ -560,7 +565,7 @@
 }
 
 .package-badge {
-    background: linear-gradient(135deg, var(--color-gold-primary), var(--color-gold-secondary));
+    background: var(--color-gold-primary);
     color: var(--color-white);
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-full);

@@ -1,0 +1,17 @@
+# After creating the repository on GitHub, run these commands:
+
+# Option 1: If you created a repository named "beyond-medispa-landing"
+git remote add origin https://github.com/JLcilliers/beyond-medispa-landing.git
+git branch -M main
+git push -u origin main
+
+# Option 2: If you used a different repository name, replace "beyond-medispa-landing" with your repo name:
+# git remote add origin https://github.com/JLcilliers/YOUR-REPO-NAME.git
+# git branch -M main
+# git push -u origin main
+
+# To verify the remote was added:
+git remote -v
+
+# If you need to change the remote URL later:
+# git remote set-url origin https://github.com/JLcilliers/NEW-REPO-NAME.git
